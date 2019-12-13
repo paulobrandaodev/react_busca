@@ -4,7 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import Header from './components/Header/Header'
+
+const Rotas = (
+    <Router>
+        <div>
+            <Switch>
+                <Route exact path="/" component={App} />
+                <Route component={Header} />
+            </Switch>
+        </div>
+    </Router>
+)
+
+ReactDOM.render(Rotas, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
